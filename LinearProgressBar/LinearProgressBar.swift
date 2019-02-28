@@ -22,7 +22,7 @@ open class LinearProgressBar: UIView {
     @IBInspectable public var barPadding: CGFloat = 0
     
     /// Padding on the track on the progress bar
-    @IBInspectable public var trackPadding: CGFloat = 6 {
+    @IBInspectable public var trackPadding: CGFloat = 0 {
         didSet {
             if trackPadding < 0 {
                 trackPadding = 0
@@ -87,7 +87,7 @@ open class LinearProgressBar: UIView {
     func drawProgressView() {
         guard let context = UIGraphicsGetCurrentContext() else {return}
         
-        let beginPoint = CGPoint(x: barPadding + trackOffset, y: frame.size.height / 2)
+        let beginPoint = CGPoint(x: 0, y: frame.size.height / 2)
         
         
         // Progress Bar Track
